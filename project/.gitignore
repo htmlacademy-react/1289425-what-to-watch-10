@@ -5,6 +5,12 @@
 /.pnp
 .pnp.js
 
+#copies
+/src_2_9_210722
+/src_3_9
+/src_copy_210722_7_33
+/src_last_200722
+
 # testing
 /coverage
 /other

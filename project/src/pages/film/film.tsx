@@ -1,14 +1,21 @@
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
+import Button from '../../components/button/button';
+import FilmNav from '../../components/film-nav/film-nav';
+import FilmCardBig from '../../components/film-card-big/film-card-big';
+import FilmCardInfoFilm from '../../components/film-card-info-film/film-card-info-film';
+import { FilmSelectType } from '../../types/film-selected-types';
 
-function Film(): JSX.Element {
+
+
+function Film(props:{title1:string, genre1:string, date1:number, link1:string}): JSX.Element {
+
   return (
     <>
       <section className="film-card film-card--full">
         <div className="film-card__hero">
-          <div className="film-card__bg">
-            <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel" />
-          </div>
+        <FilmCardBig link={props.link1} title={props.title1} />
+
 
           <h1 className="visually-hidden">WTW</h1>
 
@@ -16,10 +23,10 @@ function Film(): JSX.Element {
 
           <div className="film-card__wrap">
             <div className="film-card__desc">
-              <h2 className="film-card__title">The Grand Budapest Hotel</h2>
+              <h2 className="film-card__title">{props.title1}</h2>
               <p className="film-card__meta">
-                <span className="film-card__genre">Drama</span>
-                <span className="film-card__year">2014</span>
+                <span className="film-card__genre">{props.genre1}</span>
+                <span className="film-card__year">{props.date1}</span>
               </p>
 
               <div className="film-card__buttons">
@@ -49,19 +56,7 @@ function Film(): JSX.Element {
             </div>
 
             <div className="film-card__desc">
-              <nav className="film-nav film-card__nav">
-                <ul className="film-nav__list">
-                  <li className="film-nav__item film-nav__item--active">
-                    <a href="/" className="film-nav__link">Overview</a>
-                  </li>
-                  <li className="film-nav__item">
-                    <a href="/" className="film-nav__link">Details</a>
-                  </li>
-                  <li className="film-nav__item">
-                    <a href="/" className="film-nav__link">Reviews</a>
-                  </li>
-                </ul>
-              </nav>
+              <FilmNav />
 
               <div className="film-rating">
                 <div className="film-rating__score">8,9</div>
@@ -127,7 +122,6 @@ function Film(): JSX.Element {
             </article>
           </div>
         </section>
-
         <Footer />
       </div>
     </>

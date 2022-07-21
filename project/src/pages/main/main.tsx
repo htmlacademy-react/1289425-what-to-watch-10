@@ -1,8 +1,13 @@
 import FilmCard from '../../components/film-card/film-card';
 import { Link } from 'react-router-dom';
 import { Films } from '../../types/film-types';
+import { GenresTypes } from '../../types/genres-types';
+import {genres} from '../../mocks/genres'
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
+import Button from '../../components/button/button';
+import FilmCardInfo from '../../components/film-card-info/film-card-info';
+import GenresCard from '../../components/genres-card/genres-card';
 
 type Props = {
   films: Films[];
@@ -28,72 +33,18 @@ function Main({ films, promoFilm }: Props): JSX.Element {
         <Header />
 
         <div className="film-card__wrap">
-          <div className="film-card__info">
-            <div className="film-card__poster">
-              <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218" height="327" />
-            </div>
-
-            <div className="film-card__desc">
-              <h2 className="film-card__title">The Grand Budapest Hotel</h2>
-              <p className="film-card__meta">
-                <span className="film-card__genre">Drama</span>
-                <span className="film-card__year">2014</span>
-              </p>
-
-              <div className="film-card__buttons">
-                <button className="btn btn--play film-card__button" type="button">
-                  <svg viewBox="0 0 19 19" width="19" height="19">
-                    <use xlinkHref="#play-s"></use>
-                  </svg>
-                  <span>Play</span>
-                </button>
-                <button className="btn btn--list film-card__button" type="button">
-                  <svg viewBox="0 0 19 20" width="19" height="20">
-                    <use xlinkHref="#add"></use>
-                  </svg>
-                  <span>My list</span>
-                  <span className="film-card__count">9</span>
-                </button>
-              </div>
-            </div>
-          </div>
+          <FilmCardInfo name='The Grand Budapest Hotel' link='img/the-grand-budapest-hotel-poster.jpg'/>
         </div>
       </section>
 
       <div className="page-content">
         <section className="catalog">
           <h2 className="catalog__title visually-hidden">Catalog</h2>
+
           <ul className="catalog__genres-list">
-            <li className="catalog__genres-item catalog__genres-item--active">
-              <Link to='/' className="catalog__genres-link">All genres</Link>
-            </li>
-            <li className="catalog__genres-item">
-              <Link to='/' className="catalog__genres-link">Comedies</Link>
-            </li>
-            <li className="catalog__genres-item">
-              <Link to='/' className="catalog__genres-link">Crime</Link>
-            </li>
-            <li className="catalog__genres-item">
-              <Link to='/' className="catalog__genres-link">Documentary</Link>
-            </li>
-            <li className="catalog__genres-item">
-              <Link to='/' className="catalog__genres-link">Dramas</Link>
-            </li>
-            <li className="catalog__genres-item">
-              <Link to='/' className="catalog__genres-link">Horror</Link>
-            </li>
-            <li className="catalog__genres-item">
-              <Link to='/' className="catalog__genres-link">Kids & Family</Link>
-            </li>
-            <li className="catalog__genres-item">
-              <Link to='/' className="catalog__genres-link">Romance</Link>
-            </li>
-            <li className="catalog__genres-item">
-              <Link to='/' className="catalog__genres-link">Sci-Fi</Link>
-            </li>
-            <li className="catalog__genres-item">
-              <Link to='/' className="catalog__genres-link">Thrillers</Link>
-            </li>
+            {genres.map((item) => (
+              <GenresCard key={item.id} {...item} />
+            ))}
           </ul>
 
           <div className="catalog__films-list">
