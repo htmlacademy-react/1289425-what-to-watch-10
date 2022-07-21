@@ -1,8 +1,7 @@
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
 import FilmCard from '../../components/film-card/film-card';
-import { Films } from '../../types/film-types';
-import {films} from '../../mocks/films'
+import {films} from '../../mocks/films';
 
 function MyList(): JSX.Element {
   return (

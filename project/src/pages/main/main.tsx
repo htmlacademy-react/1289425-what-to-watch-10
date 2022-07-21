@@ -1,11 +1,8 @@
 import FilmCard from '../../components/film-card/film-card';
-import { Link } from 'react-router-dom';
 import { Films } from '../../types/film-types';
-import { GenresTypes } from '../../types/genres-types';
-import {genres} from '../../mocks/genres'
+import {genres} from '../../mocks/genres';
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
-import Button from '../../components/button/button';
 import FilmCardInfo from '../../components/film-card-info/film-card-info';
 import GenresCard from '../../components/genres-card/genres-card';
 

@@ -1,12 +1,7 @@
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
-import Button from '../../components/button/button';
 import FilmNav from '../../components/film-nav/film-nav';
 import FilmCardBig from '../../components/film-card-big/film-card-big';
-import FilmCardInfoFilm from '../../components/film-card-info-film/film-card-info-film';
-import { FilmSelectType } from '../../types/film-selected-types';
-
-
 
 function Film(props:{title1:string, genre1:string, date1:number, link1:string}): JSX.Element {
 
@@ -14,8 +9,7 @@ function Film(props:{title1:string, genre1:string, date1:number, link1:string}):
     <>
       <section className="film-card film-card--full">
         <div className="film-card__hero">
-        <FilmCardBig link={props.link1} title={props.title1} />
-
+          <FilmCardBig link={props.link1} title={props.title1} />
 
           <h1 className="visually-hidden">WTW</h1>
 

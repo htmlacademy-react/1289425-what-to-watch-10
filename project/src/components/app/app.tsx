@@ -13,10 +13,10 @@ import { films } from '../../mocks/films';
 // eslint-disable-next-line
 //пока нет данных по выбранному фильму
 
-let title="The Grand Budapest Hotel";
-let genre='Drama';
-let date = 2014;
-let link = 'img/bg-the-grand-budapest-hotel.jpg';
+const title = 'The Grand Budapest Hotel';
+const genre = 'Drama';
+const date = 2014;
+const link = 'img/bg-the-grand-budapest-hotel.jpg';
 
 function App(): JSX.Element {
   return (

@@ -1,4 +1,4 @@
-export type FilmSelectType =  {
+export type FilmSelectType = {
     id:number;
     title: string;
     genre: string;

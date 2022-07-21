@@ -28,5 +28,5 @@ export const reviews: Reviews[] = [
     author: 'Paula Fleri-Soler',
     data:'December 20, 2016',
     rating:'7,6'
-  },
-]
+  }
+];
